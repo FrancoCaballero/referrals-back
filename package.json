@@ -1,0 +1,21 @@
+{
+  "name": "referrals-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "mongo": "docker run --name referrals -p 27018:27017 -d mongo"
+  },
+  "keywords": [],
+  "author": "Franco Caballero",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.3.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
