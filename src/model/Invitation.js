@@ -2,13 +2,13 @@ const { Schema, model } = require('mongoose')
 
 const InvitationSchema = new Schema({
   userId: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: 'User',
     required: true
   },
-  done: {
+  active: {
     type: Boolean,
-    default: false
+    default: true
   },
 })
 
