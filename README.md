@@ -3,7 +3,7 @@
 ## Instrucciones para la ejecución de la aplicación
 
 - Se necesita tener mongodb, si no lo tienes en la maquína puedes levantar un contenedor con docker con el comando npm run mongo
-el cual se levantara en el puerto 27018 por defecto (debes tene instalado docker)
+el cual se levantara en el puerto 27018 por defecto (debes tener instalado docker)
 ```sh
 npm run mongo
 ```
