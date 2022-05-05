@@ -19,10 +19,9 @@ exports.add = async (req, res) => {
     const user = await UserModel.findOne({email})
     if (!user) return res.status(500).json('Usuario no encontrado')
 
-    // find invitation by email and active
     const foundUser = await UserModel.findOne({email})
     const foundInvitation = await Invitation.findOne({userId: foundUser._id, active: true})
-    console.log(foundInvitation)
+
     if (foundInvitation) {
       foundInvitation.active = false
       await foundInvitation.save()

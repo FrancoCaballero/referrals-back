@@ -9,7 +9,6 @@ exports.getAll = async (req, res) => {
   }
 }
 
-// get by userId
 exports.getByUserId = async (req, res) => {
   try{
     const referralEarnings = await ReferralEarnings.find({user: {_id: req.params.userId}})

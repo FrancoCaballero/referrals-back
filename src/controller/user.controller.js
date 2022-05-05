@@ -22,7 +22,6 @@ exports.getById = async (req, res) => {
   }
 }
 
-// get by email
 exports.getByEmail = async (req, res) => {
   try{
     const user = await UserModel.findOne({email: req.params.email})
@@ -44,7 +43,6 @@ exports.add = async (req, res) => {
   }
 } 
 
-// add by invitation
 exports.addByInvitation = async (req, res) => {
   try{
     const invitation = await Invitation.findById(req.params.invitationId)
@@ -74,7 +72,6 @@ exports.addByInvitation = async (req, res) => {
   }
 }
 
-// updateUser
 exports.update = async (req, res) => {
   try{
     const user = await UserModel.findByIdAndUpdate(req.params.id, req.body, {new: true})
