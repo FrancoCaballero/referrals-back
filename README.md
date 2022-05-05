@@ -2,6 +2,10 @@
 
 ## Instrucciones para la ejecución de la aplicación
 
+- Debemos realizar el siguiente comando para instalar las dependencias
+```sh
+npm install
+```
 - Se necesita tener mongodb, si no lo tienes en la maquína puedes levantar un contenedor con docker con el comando npm run mongo
 el cual se levantara en el puerto 27018 por defecto (debes tener instalado docker)
 ```sh
