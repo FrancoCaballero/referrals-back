@@ -8,7 +8,7 @@ router.get('/user', getAll)
 router.get('/user/:id', getById)
 router.get('/user/:email', getByEmail)
 router.post('/user', add)
-router.post('/user/:invitationId', addByInvitation)
+router.post('/user/invitation/:invitationId', addByInvitation)
 router.put('/user/:id', update)
 
 module.exports = router
