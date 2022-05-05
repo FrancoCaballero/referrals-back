@@ -1,10 +1,15 @@
 const { Schema, model } = require('mongoose')
+const { UserSchema } = require('./User')
 
 const ReferralEarningsSchema = new Schema({
-  userId: {
-    type: Schema.Types.ObjectId,
+  user: {
+    type: UserSchema,
     ref: 'User',
     required: true
+  },
+  invitations: {
+    type: Number,
+    default: 0
   },
   amount: {
     type: Number,
