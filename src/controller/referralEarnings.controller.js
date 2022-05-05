@@ -1,10 +1,19 @@
 const ReferralEarnings = require('../model/ReferralEarnings')
 
+exports.getAll = async (req, res) => {
+  try{
+    const referralEarnings = await ReferralEarnings.find()
+    res.json(referralEarnings)
+  } catch(error) {
+    return res.status(500).json(error.message)
+  }
+}
+
 // get by userId
 exports.getByUserId = async (req, res) => {
   try{
-    const referralEarnings = await ReferralEarnings.find({userId: req.params.userId})
-    res.send(referralEarnings)
+    const referralEarnings = await ReferralEarnings.find({user: {_id: req.params.userId}})
+    res.json(referralEarnings)
   } catch(error) {
     return res.send(error.message)
   }
@@ -18,7 +27,7 @@ exports.add = async (req, res) => {
     const referralEarnings = new ReferralEarnings({ userId, amount })
     await referralEarnings.save()
     
-    res.send('ReferralEarnings creado!')
+    res.json(referralEarnings)
   } catch(error) {
     return res.send(error.message)
   }
@@ -30,7 +39,7 @@ exports.update = async (req, res) => {
     if (!userId || !amount) return res.send('Usuario y monto son requeridos')
 
     const referralEarnings = await ReferralEarnings.findOneAndUpdate({ userId }, { amount }, { new: true })
-    res.send(referralEarnings)
+    res.json(referralEarnings)
   } catch(error) {
     return res.send(error.message)
   }

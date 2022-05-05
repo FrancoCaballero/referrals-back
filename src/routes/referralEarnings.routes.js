@@ -1,8 +1,11 @@
 const { Router } = require('express')
 
-const { add, update } = require('../controller/referralEarnings.controller')
+const { add, update, getAll } = require('../controller/referralEarnings.controller')
 
 const router = Router()
 
-router.post('/referralEarnings', add)
-router.put('/referralEarnings/:id', update)
+router.get('/referral-earnings', getAll)
+router.post('/referral-earnings', add)
+router.put('/referral-earnings/:id', update)
+
+module.exports = router
